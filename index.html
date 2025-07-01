@@ -4,9 +4,9 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>chessground</title>
-    <link rel="stylesheet" type="text/css" href="chessground/assets/chessground.base.css" />
-    <link rel="stylesheet" type="text/css" href="chessground/assets/chessground.cburnett.css" />
-    <link id="theme-css" rel="stylesheet" type="text/css" href="chessground/assets/chessground.brown.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="assets/chessground.base.css" />
+    <link rel="stylesheet" type="text/css" href="assets/chessground.cburnett.css" />
+    <link id="theme-css" rel="stylesheet" type="text/css" href="assets/chessground.brown.css" media="screen" />
     <style>
       body {
         display: flex;
@@ -154,7 +154,7 @@
         const themeLink = document.getElementById('theme-css');
         // Force a reload of the theme CSS
         themeLink.media = 'none';
-        themeLink.href = `chessground/assets/chessground.${theme}.css`;
+        themeLink.href = `assets/chessground.${theme}.css`;
         themeLink.media = 'screen';
       };
     </script>
