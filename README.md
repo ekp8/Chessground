@@ -3,7 +3,7 @@ Chessground Demo
 This is an interactive Chessboard demo using the Chessground library.
 Purpose
 
-This project serves as a playground for me to test and experiment with the Chessground library. It is intended for personal experimentation and development. Eventually, I plan to host the demo on GitHub Pages.
+This project serves as a playground for me to test and experiment with the Chessground library. Eventually, I plan to host the demo on GitHub Pages.
 Features
 
     Interactive chessboard powered by Chessground
