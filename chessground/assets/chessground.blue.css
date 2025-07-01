@@ -1,10 +1,13 @@
-/** Blue theme - CSS checkerboard using linear gradients */
+/** Blue theme - proper checkerboard pattern */
 cg-board {
   background-color: #dee3e6;
   background-image: 
-    linear-gradient(90deg, #8ca2b5 50%, transparent 50%),
-    linear-gradient(#dee3e6 50%, #8ca2b5 50%);
-  background-size: 12.5% 12.5%;
+    linear-gradient(45deg, #8ca2b5 25%, transparent 25%), 
+    linear-gradient(-45deg, #8ca2b5 25%, transparent 25%), 
+    linear-gradient(45deg, transparent 75%, #8ca2b5 75%), 
+    linear-gradient(-45deg, transparent 75%, #8ca2b5 75%);
+  background-size: 25% 25%;
+  background-position: 0 0, 0 12.5%, 12.5% -12.5%, -12.5% 0px;
 }
 
 /** Interactive elements */
