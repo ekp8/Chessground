@@ -2,6 +2,7 @@
 cg-board {
   background-color: #dee3e6;
   background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyIDIiPjxwYXRoIGZpbGw9IiM4Y2EyYjUiIGQ9Ik0wIDBoMnYySDB6Ii8+PHBhdGggZmlsbD0iI2RlZTNlNiIgZD0iTTAgMGgxdjFIMHptMSAxaDFWMkgxeiIvPjwvc3ZnPg==');
+  background-size: 12.5% 12.5%;
 }
 
 /** Interactive elements */

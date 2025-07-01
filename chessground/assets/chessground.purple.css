@@ -1,0 +1,24 @@
+/** Purple theme board squares */
+cg-board {
+  background-color: #f3e5f5;
+  background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyIDIiPjxwYXRoIGZpbGw9IiM5YzI3YjAiIGQ9Ik0wIDBoMnYySDB6Ii8+PHBhdGggZmlsbD0iI2YzZTVmNSIgZD0iTTAgMGgxdjFIMHptMSAxaDFWMkgxeiIvPjwvc3ZnPg==');
+  background-size: 12.5% 12.5%;
+}
+
+/** Interactive elements */
+cg-board square.move-dest {
+  background: radial-gradient(rgba(156, 39, 176, 0.5) 22%, #7b1fa2 0, rgba(0, 0, 0, 0.3) 0, rgba(0, 0, 0, 0) 0);
+}
+cg-board square.premove-dest {
+  background: radial-gradient(rgba(171, 71, 188, 0.5) 22%, #8e24aa 0, rgba(0, 0, 0, 0.3) 0, rgba(0, 0, 0, 0) 0);
+}
+cg-board square.oc.move-dest {
+  background: radial-gradient(transparent 0%, transparent 80%, rgba(156, 39, 176, 0.3) 80%);
+}
+cg-board square.oc.premove-dest {
+  background: radial-gradient(transparent 0%, transparent 80%, rgba(171, 71, 188, 0.2) 80%);
+}
+
+cg-board square.selected {
+  background-color: rgba(156, 39, 176, 0.2);
+}
