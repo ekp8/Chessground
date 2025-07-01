@@ -6,7 +6,7 @@
     <title>chessground</title>
     <link rel="stylesheet" type="text/css" href="chessground/assets/chessground.base.css" />
     <link rel="stylesheet" type="text/css" href="chessground/assets/chessground.cburnett.css" />
-    <link rel="stylesheet" type="text/css" href="chessground/assets/chessground.brown.css" />
+    <link id="theme-css" rel="stylesheet" type="text/css" href="chessground/assets/chessground.brown.css" />
     <style>
       body {
         display: flex;
@@ -65,14 +65,16 @@
       let cg = Chessground(document.getElementById('board'), {
         orientation,
         movable: {
-          free: false,
-          color: 'white',
-          dests: () => new Map(),
+          free: true,  // Allow free movement
+          color: 'both',  // Both colors can move
           events: {
             after: (orig, dest) => {
               moveHistory.push({ orig, dest });
             }
           }
+        },
+        draggable: {
+          enabled: false  // Disable drag, use click-to-move instead
         },
         highlight: {
           lastMove: true,
@@ -97,17 +99,8 @@
       // Theme switcher
       document.getElementById('themeSelect').onchange = (e) => {
         const theme = e.target.value;
-        const links = document.getElementsByTagName('link');
-        for (let i = 0; i < links.length; i++) {
-          const link = links[i];
-          if (link.href.includes('chessground.brown.css') ||
-              link.href.includes('chessground.blue.css') ||
-              link.href.includes('chessground.green.css') ||
-              link.href.includes('chessground.purple.css')) {
-            link.href = `chessground/assets/chessground.${theme}.css`;
-            break;
-          }
-        }
+        const themeLink = document.getElementById('theme-css');
+        themeLink.href = `chessground/assets/chessground.${theme}.css`;
       };
     </script>
   </body>
