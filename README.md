@@ -1,19 +1,54 @@
-Chessground Demo
+# Chessground Demo
 
-This is an interactive Chessboard demo using the Chessground library.
-Purpose
+This is a live demo of the [Chessground](https://github.com/lichess-org/chessground) chess UI library.
 
-This project serves as a playground for me to test and experiment with the Chessground library. Eventually, I plan to host the demo on GitHub Pages.
-Features
+## Live Demo
 
-    Interactive chessboard powered by Chessground
-    Experimentation and testing for future chess projects
+Visit the live demo at: https://ekp8.github.io/Chessground/
 
-Getting Started
+## Features
 
-    Clone the repository:
-  
+- Interactive chessboard with multiple examples
+- Drag and drop pieces
+- Board with custom FEN positions
+- Drawable arrows and annotations
+- Coordinate display options
+- Different board orientations
 
-git clone https://github.com/ekp8/Chessground.git
+## About Chessground
 
-Open the project in GitHub Codespaces or your preferred editor.
+Chessground is the chess UI library used by [Lichess.org](https://lichess.org). It provides:
+
+- Fast, responsive chess board rendering
+- Smooth piece animations
+- Touch/mouse support
+- Customizable themes
+- FEN position support
+- Drawing capabilities
+
+## Getting Started
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/ekp8/Chessground.git
+   ```
+
+2. Open the project in GitHub Codespaces or your preferred editor
+
+3. For local development, start a HTTP server:
+   ```bash
+   python3 -m http.server 8000
+   ```
+
+4. Open `http://localhost:8000` in your browser
+
+## Project Structure
+
+- `index.html` - Main demo page
+- `assets/` - CSS styling files
+- `dist/` - Compiled JavaScript files
+- `chessground/` - Original source code for development
+
+## Source
+
+This demo is built from the official Chessground repository: https://github.com/lichess-org/chessground
