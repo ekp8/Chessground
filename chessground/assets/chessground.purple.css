@@ -1,7 +1,10 @@
-/** Purple theme - simple CSS checkerboard */
+/** Purple theme - CSS checkerboard using linear gradients */
 cg-board {
-  background: 
-    repeating-conic-gradient(#f3e5f5 0deg 90deg, #9c27b0 90deg 180deg) 0 0/12.5% 12.5%;
+  background-color: #f3e5f5;
+  background-image: 
+    linear-gradient(90deg, #9c27b0 50%, transparent 50%),
+    linear-gradient(#f3e5f5 50%, #9c27b0 50%);
+  background-size: 25% 25%;
 }
 
 /** Interactive elements */

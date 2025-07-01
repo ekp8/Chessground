@@ -1,7 +1,10 @@
-/** Blue theme - simple CSS checkerboard */
+/** Blue theme - CSS checkerboard using linear gradients */
 cg-board {
-  background: 
-    repeating-conic-gradient(#dee3e6 0deg 90deg, #8ca2b5 90deg 180deg) 0 0/12.5% 12.5%;
+  background-color: #dee3e6;
+  background-image: 
+    linear-gradient(90deg, #8ca2b5 50%, transparent 50%),
+    linear-gradient(#dee3e6 50%, #8ca2b5 50%);
+  background-size: 25% 25%;
 }
 
 /** Interactive elements */
