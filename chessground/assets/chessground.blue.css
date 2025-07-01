@@ -1,0 +1,19 @@
+/** Blue theme board squares */
+cg-board {
+  background-color: #dee3e6;
+  background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyIDIiPjxwYXRoIGZpbGw9IiM4Y2EyYjUiIGQ9Ik0wIDBoMnYySDB6Ii8+PHBhdGggZmlsbD0iI2RlZTNlNiIgZD0iTTAgMGgxdjFIMHptMSAxaDFWMkgxeiIvPjwvc3ZnPg==');
+}
+
+/** Interactive elements */
+cg-board square.move-dest {
+  background: radial-gradient(rgba(20, 85, 150, 0.5) 22%, #2185d0 0, rgba(0, 0, 0, 0.3) 0, rgba(0, 0, 0, 0) 0);
+}
+cg-board square.premove-dest {
+  background: radial-gradient(rgba(20, 30, 85, 0.5) 22%, #203085 0, rgba(0, 0, 0, 0.3) 0, rgba(0, 0, 0, 0) 0);
+}
+cg-board square.oc.move-dest {
+  background: radial-gradient(transparent 0%, transparent 80%, rgba(20, 85, 150, 0.3) 80%);
+}
+cg-board square.oc.premove-dest {
+  background: radial-gradient(transparent 0%, transparent 80%, rgba(20, 30, 85, 0.2) 80%);
+}
