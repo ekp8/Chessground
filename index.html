@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Chessground Web App</title>
-    <link id="theme-css" rel="stylesheet" type="text/css" href="assets/chessground.base.css" />
+    <title>chessground</title>
+    <link id="theme-css" rel="stylesheet" type="text/css" href="chessground/assets/chessground.base.css" />
     <style>
       body {
         display: flex;
@@ -27,7 +27,7 @@
     </style>
   </head>
   <body>
-    <h2>Chessground Web App</h2>
+    <h2>chessground</h2>
     <div class="controls">
       <button id="flipBtn">Flip Board</button>
       <button id="undoBtn">Undo</button>
@@ -39,7 +39,7 @@
     </div>
     <div class="chessground" id="board"></div>
     <script type="module">
-      import { Chessground } from './dist/chessground.js';
+      import { Chessground } from './chessground/dist/chessground.js';
       let orientation = 'white';
       let moveHistory = [];
       let cg = Chessground(document.getElementById('board'), {
@@ -76,7 +76,7 @@
       // Style switcher
       document.getElementById('styleSelect').onchange = (e) => {
         const theme = e.target.value;
-        document.getElementById('theme-css').href = 'assets/' + theme;
+        document.getElementById('theme-css').href = 'chessground/assets/' + theme;
       };
     </script>
   </body>
