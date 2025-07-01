@@ -62,6 +62,8 @@
       import { Chessground } from './dist/chessground.js';
       let orientation = 'white';
       let moveHistory = [];
+      let positionHistory = ['rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR']; // Starting position
+      
       let cg = Chessground(document.getElementById('board'), {
         orientation,
         movable: {
@@ -70,6 +72,8 @@
           events: {
             after: (orig, dest) => {
               moveHistory.push({ orig, dest });
+              // Save the position after the move
+              positionHistory.push(cg.getFen());
             }
           }
         },
@@ -86,13 +90,13 @@
         cg.toggleOrientation();
         orientation = orientation === 'white' ? 'black' : 'white';
       };
-      // Undo (simple: just flips last move, for demo)
+      // Undo - restores the previous position
       document.getElementById('undoBtn').onclick = () => {
         if (moveHistory.length > 0) {
           moveHistory.pop();
-          // For a real chess app, you would need to keep FENs or use a chess engine
-          // Here, just reload the board to the initial position
-          cg.set({ fen: 'start' });
+          positionHistory.pop(); // Remove current position
+          const previousPosition = positionHistory[positionHistory.length - 1];
+          cg.set({ fen: previousPosition }); // Restore previous position
         }
       };
 
