@@ -36,17 +36,34 @@
         background: #f0f0f0;
       }
       .board-container {
-        width: 640px;
+        width: 100vw;
         height: 640px;
         display: flex;
         align-items: center;
         justify-content: center;
-        cursor: pointer;
         margin-bottom: 20px;
+        position: relative;
+      }
+      .board-flip-area {
+        position: absolute;
+        top: 0;
+        height: 100%;
+        cursor: pointer;
+        z-index: 1;
+      }
+      .board-flip-left {
+        left: 0;
+        right: calc(50% + 300px); /* Half the board width */
+      }
+      .board-flip-right {
+        right: 0;
+        left: calc(50% + 300px); /* Half the board width */
       }
       .chessground {
         width: 600px;
         height: 600px;
+        position: relative;
+        z-index: 2;
       }
       cg-board {
         background-color: #bfcfdd;
@@ -66,6 +83,8 @@
       </select>
     </div>
     <div class="board-container" id="boardContainer">
+      <div class="board-flip-area board-flip-left" id="flipLeft"></div>
+      <div class="board-flip-area board-flip-right" id="flipRight"></div>
       <div class="chessground" id="board"></div>
     </div>
     <script type="module">
@@ -110,14 +129,24 @@
         }
       };
 
-      // Click anywhere in the container to flip board
-      document.getElementById('boardContainer').onclick = (e) => {
-        // Only flip if clicking the container, not the board itself
-        if (e.target.id === 'boardContainer') {
-          cg.toggleOrientation();
-          orientation = orientation === 'white' ? 'black' : 'white';
-        }
+      // Click left or right areas to flip board
+      document.getElementById('flipLeft').onclick = () => {
+        cg.toggleOrientation();
+        orientation = orientation === 'white' ? 'black' : 'white';
       };
+      
+      document.getElementById('flipRight').onclick = () => {
+        cg.toggleOrientation();
+        orientation = orientation === 'white' ? 'black' : 'white';
+      };
+
+      // Remove the old board container click handler since we now have dedicated areas
+      // document.getElementById('boardContainer').onclick = (e) => {
+      //   if (e.target.id === 'boardContainer') {
+      //     cg.toggleOrientation();
+      //     orientation = orientation === 'white' ? 'black' : 'white';
+      //   }
+      // };
 
       // Theme switcher
       document.getElementById('themeSelect').onchange = (e) => {
