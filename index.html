@@ -6,7 +6,7 @@
     <title>chessground</title>
     <link rel="stylesheet" type="text/css" href="chessground/assets/chessground.base.css" />
     <link rel="stylesheet" type="text/css" href="chessground/assets/chessground.cburnett.css" />
-    <link id="theme-css" rel="stylesheet" type="text/css" href="chessground/assets/chessground.brown.css" />
+    <link rel="stylesheet" type="text/css" href="chessground/assets/chessground.brown.css" />
     <style>
       body {
         display: flex;
@@ -21,9 +21,23 @@
         display: flex;
         gap: 10px;
       }
+      button, select {
+        padding: 6px 12px;
+        font-size: 14px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        background: white;
+        cursor: pointer;
+      }
+      select {
+        padding: 5px 10px;
+      }
+      button:hover, select:hover {
+        background: #f0f0f0;
+      }
       .chessground {
-        width: 500px;
-        height: 500px;
+        width: 600px;
+        height: 600px;
         margin-bottom: 20px;
       }
       cg-board {
@@ -36,10 +50,11 @@
     <div class="controls">
       <button id="flipBtn">Flip Board</button>
       <button id="undoBtn">Undo</button>
-      <select id="styleSelect">
-        <option value="chessground.blue.css">Blue</option>
-        <option value="chessground.brown.css">Brown</option>
-        <option value="chessground.green.css">Green</option>
+      <select id="themeSelect">
+        <option value="brown">Brown</option>
+        <option value="blue">Ocean Blue</option>
+        <option value="green">Forest Green</option>
+        <option value="purple">Royal Purple</option>
       </select>
     </div>
     <div class="chessground" id="board"></div>
@@ -78,10 +93,21 @@
           cg.set({ fen: 'start' });
         }
       };
-      // Style switcher
-      document.getElementById('styleSelect').onchange = (e) => {
+
+      // Theme switcher
+      document.getElementById('themeSelect').onchange = (e) => {
         const theme = e.target.value;
-        document.getElementById('theme-css').href = 'chessground/assets/' + theme;
+        const links = document.getElementsByTagName('link');
+        for (let i = 0; i < links.length; i++) {
+          const link = links[i];
+          if (link.href.includes('chessground.brown.css') ||
+              link.href.includes('chessground.blue.css') ||
+              link.href.includes('chessground.green.css') ||
+              link.href.includes('chessground.purple.css')) {
+            link.href = `chessground/assets/chessground.${theme}.css`;
+            break;
+          }
+        }
       };
     </script>
   </body>
