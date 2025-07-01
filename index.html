@@ -6,7 +6,7 @@
     <title>chessground</title>
     <link rel="stylesheet" type="text/css" href="chessground/assets/chessground.base.css" />
     <link rel="stylesheet" type="text/css" href="chessground/assets/chessground.cburnett.css" />
-    <link id="theme-css" rel="stylesheet" type="text/css" href="chessground/assets/chessground.brown.css" />
+    <link id="theme-css" rel="stylesheet" type="text/css" href="chessground/assets/chessground.brown.css" media="screen" />
     <style>
       body {
         display: flex;
@@ -35,10 +35,18 @@
       button:hover, select:hover {
         background: #f0f0f0;
       }
+      .board-container {
+        width: 800px;
+        height: 800px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        margin-bottom: 20px;
+      }
       .chessground {
         width: 600px;
         height: 600px;
-        margin-bottom: 20px;
       }
       cg-board {
         background-color: #bfcfdd;
@@ -57,7 +65,9 @@
         <option value="purple">Royal Purple</option>
       </select>
     </div>
-    <div class="chessground" id="board"></div>
+    <div class="board-container" id="boardContainer">
+      <div class="chessground" id="board"></div>
+    </div>
     <script type="module">
       import { Chessground } from './dist/chessground.js';
       let orientation = 'white';
@@ -100,11 +110,23 @@
         }
       };
 
+      // Click anywhere in the container to flip board
+      document.getElementById('boardContainer').onclick = (e) => {
+        // Only flip if clicking the container, not the board itself
+        if (e.target.id === 'boardContainer') {
+          cg.toggleOrientation();
+          orientation = orientation === 'white' ? 'black' : 'white';
+        }
+      };
+
       // Theme switcher
       document.getElementById('themeSelect').onchange = (e) => {
         const theme = e.target.value;
         const themeLink = document.getElementById('theme-css');
+        // Force a reload of the theme CSS
+        themeLink.media = 'none';
         themeLink.href = `chessground/assets/chessground.${theme}.css`;
+        themeLink.media = 'screen';
       };
     </script>
   </body>
